@@ -1,0 +1,159 @@
+@use "config" as *;
+
+.section-4 {
+  grid-column: 1 / -1;
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-rows: auto;
+    grid-template-areas:
+      ". . ME ME ME IN IN IN CO CO CO ."
+      ". . ME ME ME IN IN IN CO CO CO ."
+      ". . ME ME ME IN IN IN CO CO CO .";
+
+    .h4 {
+      width: 220px;
+      border-bottom: 2px solid;
+      border-image: linear-gradient(0.95turn, #e4e4e4, #e4e4e4, #e4e4e4, #ffffff);
+      border-image-slice: 1;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__menu {
+      grid-area: ME;
+    }
+
+    &__instruction {
+      grid-area: IN;
+
+      & > div {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+      }
+    }
+
+    &__contacts {
+      grid-area: CO;
+
+      & > .h6 {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 18px;
+        width: 230px;
+      }
+
+      & > span {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+footer {
+  & > main {
+    height: 88px;
+    background: linear-gradient(
+      115.93deg,
+      rgba(180, 13, 96, 0.98) -8.51%,
+      rgba(0, 78, 103, 0.98) 46.45%,
+      rgba(36, 135, 167, 0.98) 106.12%
+    );
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+// RESPONSIVE
+
+@include media-ipad {
+  .section-4 {
+    padding-bottom: 40px;
+
+    .main {
+      grid-template-areas:
+        "ME ME ME ME IN IN IN IN CO CO CO CO"
+        "ME ME ME ME IN IN IN IN CO CO CO CO"
+        "ME ME ME ME IN IN IN IN CO CO CO CO";
+      padding-inline: 55px;
+
+      .h4 {
+        width: 170px;
+      }
+
+      &__contacts {
+        & > .h6 {
+          min-width: 180px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  footer {
+    & > main {
+      justify-content: space-around;
+    }
+  }
+}
+
+@include media-mobile {
+  .section-4 {
+    padding-bottom: 40px;
+
+    .main {
+      grid-template-areas:
+        "ME ME ME ME ME ME ME ME ME ME ME ME"
+        "IN IN IN IN IN IN IN IN IN IN IN IN "
+        "CO CO CO CO CO CO CO CO CO CO CO CO";
+      padding-inline: 35px;
+
+      .h4 {
+        width: 80%;
+      }
+
+      &__menu {
+        margin-bottom: 60px;
+      }
+
+      &__instruction {
+        margin-bottom: 60px;
+      }
+
+      &__contacts {
+        grid-area: CO;
+
+        & > .h6 {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  footer {
+    & > main {
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-around;
+      padding: 40px;
+      height: 150px;
+
+      & > p:first-child{
+        width: 90%;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

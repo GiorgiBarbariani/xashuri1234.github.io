@@ -1,0 +1,357 @@
+//Font Face
+
+@font-face {
+  font-family: Helvetica Neue;
+  src: url(../fonts/HelveticaNeue.ttf);
+}
+
+// RESET
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Helvetica Neue;
+}
+
+body {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica Neue;
+}
+
+ul,
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+//VARIABLES
+
+$myTransition: all 1s ease-in-out;
+
+//TYPOGRAPHY
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+a,
+ul li {
+  font-family: "Helvetica Neue", sans-serif !important;
+}
+
+h1 {
+  //header and hero "snup"
+  font-style: normal;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 56px;
+}
+
+.h1 {
+  //bottom section snup title
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: #376cb3;
+}
+
+h2 {
+  // hero title
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.h2 {
+  //bottom section snup text
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #d50158;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+}
+
+.h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #d50158;
+}
+
+h4 {
+  //like slider, like faq, three big box
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #376cb3;
+}
+
+.h4 {
+  //footer titles
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #376cb3;
+}
+
+h5 {
+  //three card title
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #376cb3;
+}
+
+.h5 {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: #376cb3;
+}
+
+h6 {
+  //header ul li
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.h6 {
+  //footer text
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 36px;
+  color: #376cb3;
+}
+
+p {
+  //bottom section snup bottom text
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #376cb3;
+}
+
+.p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+button {
+  cursor: pointer;
+}
+
+// BUTTONS
+
+@mixin HeaderButton {
+  width: 150px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  filter: drop-shadow(0px 9px 6px rgba(0, 0, 0, 0.5));
+  border-radius: 50px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+
+  &:hover {
+    background: linear-gradient(127.43deg, #d50158 15.73%, #6a002c 107.22%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+  }
+
+  &:active {
+    color: #d50158;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+  }
+}
+
+@mixin modalPopupButton {
+  width: 240px;
+  height: 50px;
+  max-height: 50px;
+  border: 2px solid #d50158;
+  filter: drop-shadow(0px 9px 6px rgba(0, 0, 0, 0.2));
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #d50158;
+
+  &:hover {
+    background: linear-gradient(127.43deg, #d50158 15.73%, #6a002c 107.22%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+  }
+
+  &:active {
+    color: #d50158;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+  }
+}
+
+@mixin heroSectionButton {
+  width: 240px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  filter: drop-shadow(0px 9px 6px rgba(0, 0, 0, 0.47));
+  border-radius: 50px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &:hover {
+    background: linear-gradient(127.43deg, #d50158 15.73%, #6a002c 107.22%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+  }
+
+  &:active {
+    color: #d50158;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+  }
+}
+
+@mixin snupSectionButton {
+  width: 240px;
+  height: 50px;
+  border: 2px solid #d50158;
+  filter: drop-shadow(0px 9px 6px rgba(0, 0, 0, 0.2));
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #d50158;
+
+  &:hover {
+    background: linear-gradient(127.43deg, #d50158 15.73%, #6a002c 107.22%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      color: #ffffff;
+    }
+  }
+
+  &:active {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 0px 9px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      color: #d50158;
+    }
+  }
+}
+
+// MIXINS
+
+@mixin media-mobile {
+  @media screen and (max-width: 768px) and (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin media-ipad {
+  @media screen and (max-width: 1440px) and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}

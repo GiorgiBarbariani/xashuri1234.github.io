@@ -1,0 +1,1259 @@
+@use "config" as *;
+@use "section-3" as *;
+@use "section-4" as *;
+@use "modalBuyWindow" as *;
+
+body > * {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+body > * {
+  background: linear-gradient(90.44deg, #ffffff 5.35%, rgba(255, 255, 255, 0) 65.65%);
+}
+
+.root {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 190px repeat(4, auto) 88px;
+  grid-template-areas:
+    "H H H H H H H H H H H H"
+    "S1 S1 S1 S1 S1 S1 S1 S1 S1 S1 S1 S1"
+    "S2 S2 S2 S2 S2 S2 S2 S2 S2 S2 S2 S2"
+    "S3 S3 S3 S3 S3 S3 S3 S3 S3 S3 S3 S3"
+    "S4 S4 S4 S4 S4 S4 S4 S4 S4 S4 S4 S4"
+    "F F F F F F F F F F F F";
+}
+
+header {
+  grid-area: H;
+}
+
+.section-1 {
+  grid-area: S1;
+}
+
+.section-2 {
+  grid-area: S2;
+}
+
+.section-3 {
+  grid-area: S3;
+}
+
+footer {
+  grid-area: F;
+}
+
+// Header
+header {
+  //TOP HEADER
+  .top-header {
+    padding: 0 326px 0 310px;
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    transform: all 3s ease-in-out;
+
+    &__logo {
+      width: 148px;
+      height: 99px;
+      transform: all 3s ease-in-out;
+
+      &:hover img {
+        transform: scale(1.2);
+        transform: all 3s ease-in-out;
+      }
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        transform: all 3s ease-in-out;
+      }
+    }
+
+    & > div:first-child {
+      display: flex;
+      align-items: center;
+
+      .barMenu {
+        font-size: 30px;
+        color: #376cb3;
+        display: none;
+      }
+
+      h1 {
+        color: #376cb3;
+      }
+    }
+  }
+
+  //COLORED HEADER
+  .header {
+    height: 70px;
+    background: #c71065;
+    padding: 0 324px 0 337px;
+    display: flex;
+    align-items: center;
+
+    & > ul {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+
+      & > li {
+        & > button {
+          background: none;
+          border: none;
+        }
+
+        & > .styled-button {
+          @include HeaderButton;
+        }
+      }
+    }
+  }
+}
+
+// SECTION - 1
+.section-1 {
+  background: linear-gradient(
+    115.93deg,
+    rgba(180, 13, 96, 0.98) -8.51%,
+    rgba(0, 78, 103, 0.98) 46.45%,
+    rgba(36, 135, 167, 0.98) 106.12%
+  );
+
+  & > main {
+    height: 660px;
+    background: url(../assets/heroBackground.png);
+    background-repeat: no-repeat;
+    background-position: -50px 0px;
+    display: flex;
+    padding-top: 70px;
+    padding-left: 310px;
+    transition: $myTransition;
+    overflow: hidden;
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      padding-top: 12px;
+
+      & > h1 {
+        margin-bottom: 28px;
+        color: #ffffff;
+      }
+
+      & > h2 {
+        margin-bottom: 49px;
+
+        width: 367px;
+      }
+
+      & > button {
+        @include heroSectionButton;
+      }
+    }
+
+    .images {
+      position: relative;
+      display: flex;
+      transition: $myTransition;
+
+      &__boyImage1 {
+        position: absolute;
+        bottom: 10px;
+        left: 12px;
+        z-index: 2;
+      }
+      &__snupImage {
+        position: absolute;
+        top: 0;
+        left: 45px;
+      }
+      &__boyImage2 {
+        position: absolute;
+        bottom: 0;
+        left: -110px;
+      }
+    }
+  }
+}
+
+// SECTION - 2
+.section-2 {
+  padding-top: 65px;
+  background: linear-gradient(95deg, #ffffff 5.35%, #f5f5f5 65.65%);
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 99;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    grid-auto-rows: 292px;
+    grid-column-gap: 20px;
+    grid-row-gap: 25px;
+    margin-bottom: 72px;
+    padding-inline: 250px;
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      box-shadow: 0px 10px 13px #eef4f5;
+      border-radius: 10px;
+      gap: 17px;
+    }
+
+    h5 {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 161px;
+    }
+
+    & > :last-child h5:last-child {
+      width: 222px;
+    }
+  }
+
+  .background {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 990.5px;
+    left: 0px;
+    top: 80px;
+    background: linear-gradient(180deg, #fcfcfc 25.09%, rgba(252, 252, 252, 0) 86.62%);
+    box-shadow: 0px 10px 13px #eef4f5;
+    clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .main-container {
+    position: relative;
+    z-index: 99;
+
+    & > main {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 115px 480px;
+
+      .FAQ {
+        grid-column: 3 / 11;
+
+        & > ul {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          .ButtonLiBox {
+            display: none;
+
+            &:hover {
+              border: 1px solid rgb(58, 56, 56);
+              background: #d50158;
+              border-radius: 50px;
+            }
+          }
+
+          & > li:not(:first-child) {
+            list-style-image: url("../assets/listItem.png");
+          }
+
+          & > li {
+            width: 258px;
+            height: 60px;
+            cursor: pointer;
+
+            &:last-child {
+              & > h4 {
+                width: 150px;
+                height: 100%;
+              }
+            }
+          }
+
+          & > li.active h4 {
+            color: #d50158;
+          }
+        }
+      }
+
+      .description-window {
+        grid-column: 3 / 11;
+        background: linear-gradient(
+          115.93deg,
+          rgba(180, 13, 96, 0.98) -8.51%,
+          rgba(0, 78, 103, 0.98) 46.45%,
+          rgba(36, 135, 167, 0.98) 106.12%
+        );
+        border-radius: 10px;
+        margin-bottom: 21px;
+
+        &__background {
+          background: linear-gradient(146.13deg, #71063b -1.69%, #02485e 26.65%, #013343 55%);
+          border-radius: 10px;
+          position: relative;
+          width: 720px;
+          height: 459px;
+          margin-top: 21px;
+          margin-left: 21px;
+          filter: drop-shadow(0px 20px 40px rgba(91, 100, 103, 0.3));
+
+          .snup-image {
+            position: absolute;
+            right: -221px;
+            top: -30px;
+          }
+
+          .content {
+            height: 459px;
+            background-image: url(../assets/descriptionSectionBackground.png);
+            display: flex;
+            flex-direction: column;
+            transition: $myTransition;
+            border-radius: 10px;
+            background-size: cover;
+
+            & > .myCard {
+              display: none;
+              flex-direction: column;
+              transition: $myTransition;
+              height: 459px;
+
+              // SCROLL BAR
+              & > .FullTextSPAN {
+                height: 80%;
+                transition: $myTransition;
+                overflow-y: scroll;
+                scrollbar-color: #ffffff #2094b9;
+                scrollbar-width: thin;
+                scrollbar-gutter: inherit;
+
+                &::-webkit-scrollbar {
+                  width: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+                  background: #2094b9;
+                  box-shadow: inset 2px 0px 4px rgba(0, 0, 0, 0.25);
+                  border-radius: 50px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                  background: #ffffff;
+                  box-shadow: inset 2px 0px 4px rgba(0, 0, 0, 0.25);
+                  border-radius: 50px;
+                }
+
+                h5 {
+                  color: #ffffff;
+                }
+              }
+            }
+
+            & > .myCard.show {
+              display: flex;
+              transition: $myTransition;
+            }
+
+            // First Hidden Box, Conditions Text
+            &__conditions {
+              justify-self: center;
+              display: flex;
+              width: max-content;
+              flex-direction: column;
+              margin-top: 150px;
+              margin-left: 70px;
+              transition: $myTransition;
+
+              .FullTextSPAN {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding-right: 30px;
+                height: max-content !important;
+
+                & > h5 {
+                  width: 260px;
+                }
+              }
+            }
+
+            // Second Hidden Box, Little Description Text
+            &__little-descr {
+              margin-top: 70px;
+              margin-left: 70px;
+
+              .FullTextSPAN {
+                padding-right: 33px;
+                width: max-content;
+
+                h2 {
+                  width: 375px;
+                  margin-bottom: 25px;
+                }
+
+                h5 {
+                  width: 441px;
+                }
+              }
+            }
+
+            // Third Hidden Box, Terms-of-Use Text
+            &__Terms-of-Use {
+              margin-top: 70px;
+              margin-left: 70px;
+              width: 70%;
+
+              .FullTextSPAN {
+                padding-right: 50px;
+
+                h2 {
+                  margin-bottom: 15px;
+                }
+
+                & > .h5 {
+                  font-weight: 300;
+                  font-size: 20px;
+                  line-height: 24px;
+                  margin-bottom: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+
+// MEDIA ON DESKTOP
+@include media-desktop {
+  .mobileBar {
+    display: none;
+  }
+}
+
+// MEDIA ON IPAD
+
+@include media-ipad {
+  .root {
+    grid-template-rows: 89px repeat(4, auto) 88px;
+  }
+
+  // VISIBILITY HEADER ON IPAD
+  header {
+    .top-header {
+      padding: 0 53px 0 33px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      &__logo {
+        width: 110px;
+        height: 74px;
+      }
+
+      & > div:first-child {
+        display: flex;
+        gap: 46px;
+
+        .barMenu {
+          display: flex;
+          cursor: pointer;
+        }
+
+        & > h1 {
+          font-size: 32px;
+          line-height: 39px;
+        }
+      }
+    }
+
+    & > .header.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    & > .header {
+      opacity: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 90vw;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      transition: $myTransition;
+      z-index: 999;
+
+      & > .mobileBar {
+        display: flex;
+        width: 100%;
+        height: 98px;
+        padding: 22px 29px 32px 61px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid;
+        border-image: linear-gradient(0.25turn, #a297b8, #548db8, #ffffff, #ffffff);
+        border-image-slice: 1;
+        background: #ffffff;
+
+        & > div:last-child {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          & > i {
+            font-size: 24px;
+            color: #376cb3;
+          }
+        }
+      }
+
+      & > ul {
+        padding-top: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: #ffffff;
+
+        & > li {
+          width: 100%;
+          height: 91px;
+          background: #fbfbfb;
+          display: flex;
+          align-items: center;
+          padding-left: 61px;
+
+          h6 {
+            color: #376cb3;
+          }
+
+          & > button {
+            background: none;
+            border: none;
+          }
+
+          .styled-button {
+            @include modalPopupButton;
+            width: 150px;
+            filter: drop-shadow(0px 9px 6px rgba(0, 0, 0, 0.47));
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // SECTION 1 ON IPAD
+  .section-1 {
+    & > main {
+      height: 571px;
+      padding-top: 115px;
+      padding-left: 54px;
+      background-position: -210px -33px;
+
+      .description {
+        display: flex;
+        flex-direction: column;
+
+        & > h1 {
+          margin-bottom: 28px;
+          color: #ffffff;
+        }
+
+        & > h2 {
+          margin-bottom: 49px;
+          width: 367px;
+        }
+
+        & > button {
+          @include heroSectionButton;
+        }
+      }
+
+      .images {
+        position: relative;
+        display: flex;
+        transition: $myTransition;
+
+        &__boyImage1 {
+          position: absolute;
+          bottom: -5px;
+          left: -15px;
+          z-index: 2;
+          width: 78px;
+          height: 233px;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__snupImage {
+          position: absolute;
+          top: 15px;
+          left: -10px;
+          width: 387px;
+          height: 439px;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__boyImage2 {
+          position: absolute;
+          width: 114px;
+          height: 271px;
+          bottom: -25px;
+          left: -133px;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  //SECTION 2 ON IPAD
+  .section-2 {
+    .container {
+      margin-bottom: 68px;
+      padding-inline: 10px;
+    }
+
+    .main-container {
+      & > main {
+        //  FAQ ON IPAD
+        .FAQ {
+          grid-column: 2 / auto;
+          position: relative;
+
+          & > ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+
+            .ButtonLiBox {
+              display: flex;
+              position: relative;
+              width: 50px;
+              height: 80px;
+              margin-right: 35px;
+
+              .ButtonLi {
+                position: absolute;
+                display: flex;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                transform: rotate(180deg);
+
+                &__imageBox {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  & > img {
+                    width: 70%;
+                    height: 70%;
+                    object-fit: contain;
+                  }
+                }
+              }
+
+              &:last-child {
+                & > h4 {
+                  width: 150px;
+                  height: 100%;
+                }
+              }
+            }
+
+            & > li:not(:first-child) {
+              width: 420px;
+              height: 80px;
+
+              h4 {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                justify-self: center;
+              }
+            }
+
+            
+            .li2,
+            .li3 {
+              display: none;
+            }
+
+            & > li:last-child {
+              & > h4 {
+                width: auto;
+                height: 100%;
+              }
+            }
+          }
+
+          .hideUl.showUl {
+            display: grid;
+            grid-template-columns: 50px minmax(375px, 430px);
+            grid-template-rows: 1fr 1fr 1fr;
+            position: absolute;
+            z-index: 999;
+            background: #ffffff;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            grid-column-gap: 25px;
+            width: auto;
+            padding-bottom: 20px;
+
+            .ButtonLiBox {
+              grid-column: 1 / span 1;
+              grid-row: 1/1;
+            }
+
+            .li1 {
+              grid-column: 2 / span 2;
+              grid-row: 1/1;
+              border-bottom: 2px solid #e4e4e4;
+            }
+
+            .li2 {
+              grid-column: 2 / span 2;
+              grid-row: 2/2;
+              border-bottom: 2px solid #e4e4e4;
+            }
+
+            .li3 {
+              grid-column: 2 / span 2;
+              grid-row: 3/3;
+              border-bottom: 2px solid #e4e4e4;
+            }
+          }
+        }
+
+        .description-window {
+          grid-column: 1 / -1;
+
+          &__background {
+            width: 80%;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            margin-left: 14px;
+
+            .snup-image {
+              position: absolute;
+              right: -105px;
+              top: 50px;
+              width: 200px;
+              height: 410px;
+
+              & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            & > .content {
+              background-size: cover;
+
+              .content__conditions {
+                margin-top: 70px;
+                margin-left: 70px;
+
+                .FullTextSPAN {
+                  height: max-content;
+                }
+              }
+              .content__Terms-of-Use {
+                width: 70%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// MEDIA ON MOBILE
+@include media-mobile {
+  .root {
+    grid-template-rows: 89px repeat(4, auto) 88px;
+  }
+
+  // VISIBILITY HEADER ON MOBILE
+  header {
+    .top-header {
+      padding: 0 29px 0 33px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      &__logo {
+        width: 110px;
+        height: 74px;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      & > div:first-child {
+        display: flex;
+        gap: 20px;
+
+        .barMenu {
+          font-size: 25px;
+          display: flex;
+          cursor: pointer;
+        }
+
+        & > h1 {
+          font-size: 32px;
+          line-height: 39px;
+        }
+      }
+    }
+
+    & > .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: max-content;
+      width: 90vw;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      opacity: 0;
+      pointer-events: none;
+      transition: $myTransition;
+      z-index: 999;
+
+      & > .mobileBar {
+        display: flex;
+        width: 100%;
+        height: 98px;
+        padding: 22px 29px 32px 61px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid;
+        border-image: linear-gradient(0.25turn, #a297b8, #548db8, #ffffff, #ffffff);
+        border-image-slice: 1;
+        background: #ffffff;
+
+        & > div:last-child {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          & > i {
+            font-size: 24px;
+            color: #376cb3;
+          }
+        }
+      }
+
+      & > ul {
+        height: 380px;
+        overflow-y: scroll;
+        background: #ffffff;
+        padding-top: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        & > li {
+          width: 100%;
+          height: 91px;
+          background: #fbfbfb;
+          display: flex;
+          align-items: center;
+          padding-left: 61px;
+
+          h6 {
+            color: #376cb3;
+          }
+
+          & > button {
+            background: none;
+            border: none;
+          }
+
+          .styled-button {
+            @include modalPopupButton;
+            width: 150px;
+            border: 2px solid #d50158;
+            filter: drop-shadow(0px 9px 6px rgba(0, 0, 0, 0.47));
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+
+            span {
+              box-shadow: none !important;
+              text-shadow: none !important;
+              filter: none !important;
+            }
+          }
+        }
+      }
+    }
+
+    & > .header.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  //SECTION 1 ON MOBILE
+  .section-1 {
+    & > main {
+      height: 650px;
+      padding-top: 43px;
+      padding-left: 33px;
+      background-position: -440px 0px;
+      background-size: cover;
+
+      .description {
+        display: flex;
+        flex-direction: column;
+
+        & > h1 {
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 44px;
+          margin-bottom: 24px;
+          color: #ffffff;
+        }
+
+        & > h2 {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 29px;
+          margin-bottom: 305px;
+          width: max-content;
+        }
+
+        & > button {
+          @include heroSectionButton;
+          margin-left: 34px;
+        }
+      }
+
+      .images {
+        position: relative;
+        display: flex;
+        transition: $myTransition;
+
+        &__boyImage1 {
+          position: absolute;
+          bottom: 130px;
+          left: -260px;
+          z-index: 2;
+          width: 62px;
+          height: 195px;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__snupImage {
+          position: absolute;
+          top: 185px;
+          left: -230px;
+          width: 236px;
+          height: auto;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__boyImage2 {
+          position: absolute;
+          width: 90px;
+          height: 271px;
+          bottom: 61px;
+          left: -60px;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  //SECTION 2 ON MOBILE
+  .section-2 {
+    .container {
+      margin-bottom: 85px;
+      padding-inline: 25px;
+    }
+
+    .main-container {
+      & > main {
+        grid-template-rows: 100px 645px;
+
+        // FAQ ON MOBILE
+        .FAQ {
+          grid-column: 2 / 11;
+          position: relative;
+
+          & > ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+
+            .ButtonLiBox {
+              display: flex;
+              position: relative;
+              width: 50px;
+              height: 80px;
+              margin-right: 25px;
+
+              .ButtonLi {
+                position: absolute;
+                display: flex;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                transform: rotate(180deg);
+
+                &__imageBox {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  & > img {
+                    width: 70%;
+                    height: 70%;
+                    object-fit: contain;
+                  }
+                }
+              }
+
+              &:last-child {
+                & > h4 {
+                  width: 150px;
+                  height: 100%;
+                }
+              }
+            }
+
+            & > li:not(:first-child) {
+              width: 420px;
+              height: 80px;
+
+              h4 {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                justify-self: center;
+              }
+            }
+
+            .li2,
+            .li3 {
+              display: none;
+            }
+
+            & > li:last-child {
+              & > h4 {
+                width: auto;
+                height: 100%;
+              }
+            }
+          }
+
+          .hideUl.showUl {
+            display: grid;
+            grid-template-columns: 50px 250px;
+            grid-template-rows: 1fr 1fr 1fr;
+            position: absolute;
+            z-index: 999;
+            background: #ffffff;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            grid-column-gap: 15px;
+            width: auto;
+            padding-bottom: 20px;
+
+            .ButtonLiBox {
+              grid-column: 1 / span 1;
+              grid-row: 1/1;
+            }
+
+            .li1 {
+              grid-column: 2 / -1;
+              grid-row: 1/1;
+              border-bottom: 2px solid #e4e4e4;
+              width: 100%;
+
+              & > h4 {
+                width: 258px;
+              }
+            }
+
+            .li2 {
+              grid-column: 2 / -1;
+              grid-row: 2/2;
+              border-bottom: 2px solid #e4e4e4;
+              width: 100%;
+
+              & > h4 {
+                width: 258px;
+              }
+            }
+
+            .li3 {
+              grid-column: 2 / -1;
+              grid-row: 3/3;
+              border-bottom: 2px solid #e4e4e4;
+              width: 100%;
+
+              & > h4 {
+                width: 150px;
+              }
+            }
+          }
+        }
+
+        .description-window {
+          grid-column: 1 / -1;
+          padding-inline: 9px;
+
+          &__background {
+            width: 100%;
+            margin-top: 9px;
+            margin-left: 0;
+            height: 669px;
+
+            .snup-image {
+              position: absolute;
+              right: 0px;
+              top: 150px;
+              max-width: 100%;
+
+              & > img {
+                width: 100%;
+              }
+            }
+
+            .content {
+              height: 100%;
+
+              // First Hidden Box, Conditions Text ON MOBILE
+              &__conditions {
+                justify-self: left;
+                display: flex;
+                width: max-content;
+                flex-direction: column;
+                margin-top: 88px;
+                margin-left: 19px;
+
+                .FullTextSPAN {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+                  height: max-content;
+
+                  & > h5 {
+                    width: 275px;
+                  }
+                }
+              }
+
+              // Second Hidden Box, Little Description Text ON MOBILE
+              &__little-descr {
+                margin-top: 50px;
+                margin-left: 20px;
+                width: 90%;
+                height: 100% !important;
+
+                & > .FullTextSPAN {
+                  width: 100%;
+                  height: 100%;
+                  padding-right: 50px;
+
+                  h2 {
+                    width: auto;
+                  }
+                  h5 {
+                    width: auto;
+                  }
+                }
+              }
+
+              // Third Hidden Box, TERMS OF USE Text ON MOBILE
+              &__Terms-of-Use {
+                margin-top: 50px;
+                margin-left: 20px;
+                height: 100% !important;
+                width: 90%;
+
+                .FullTextSPAN {
+                  height: 100%;
+
+                  h2 {
+                    width: auto;
+                  }
+
+                  & > .h5 {
+                    width: auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

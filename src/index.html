@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/876aaa4681.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Snup Site</title>
+  </head>
+  <body>
+    <div class="root">
+      <header>
+        <div class="top-header">
+          <div>
+            <button id="openBarBtn" title="barMenu" type="button">
+              <i class="fa-solid fa-bars barMenu"></i>
+            </button>
+            <h1>სნუპი®</h1>
+          </div>
+          <div class="top-header__logo">
+            <img src="./assets/logo.png" alt="" />
+          </div>
+        </div>
+        <div id="mobileHeader" class="header">
+          <div class="mobileBar">
+            <div><h1 class="h1">სნუპი®</h1></div>
+            <div id="closeBarBtn">
+              <i class="fa-solid fa-x closeBarMenu"></i>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <button><h6>სნუპი</h6></button>
+            </li>
+            <li>
+              <button onclick="scrollDown()">
+                <h6>მედიკამენტის შესახებ</h6>
+              </button>
+            </li>
+            <li>
+              <button onclick="scrollDown2()"><h6>გამოყენების წესი</h6></button>
+            </li>
+            <li>
+              <button id="openButton1" type="button" class="styled-button">
+                ყიდვა
+              </button>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <section class="section-1">
+        <main>
+          <div class="description">
+            <h1>სნუპი®</h1>
+            <h2>
+              ორმაგი მოქმედება <br />
+              სურდოს წინააღმდეგ!
+            </h2>
+            <button id="openButton2" type="button">ყიდვა</button>
+          </div>
+
+          <div class="images">
+            <div class="images__boyImage1">
+              <img src="./assets/boy-1.png" alt="" />
+            </div>
+            <div class="images__snupImage">
+              <img src="./assets/big-snup-hero-1.png" alt="" />
+            </div>
+            <div class="images__boyImage2">
+              <img src="./assets/boy-2.png" alt="" />
+            </div>
+          </div>
+        </main>
+      </section>
+
+      <section id="aboutSnup" class="section-2">
+        <div class="container">
+          <div class="container__card">
+            <div><img src="./assets/Nose-1.png" alt="" /></div>
+            <h5>სწრაფად ხსნის ცხვირის გაჭედილობას და სურდოს</h5>
+          </div>
+          <div class="container__card">
+            <div><img src="./assets/Nose-2.png" alt="" /></div>
+            <h5>იცავს ცხვირის ლორწოვანს სიმშრალისგან</h5>
+          </div>
+          <div class="container__card">
+            <div><img src="./assets/Nose-3.png" alt="" /></div>
+            <h5>გამოიყენება გაციების, გრიპის, ალერგიული რინიტის დროს</h5>
+          </div>
+        </div>
+
+        <div class="main-container">
+          <main>
+            <div class="FAQ">
+              <ul id="hidenUL" class="hideUl">
+                <li class="ButtonLiBox">
+                  <button
+                    onclick="openMYmenu()"
+                    id="dropMenuBTN"
+                    class="ButtonLi"
+                    type="button"
+                    title="arrow"
+                  >
+                    <div class="ButtonLi__imageBox">
+                      <img src="./assets/arrow.png" alt="" />
+                    </div>
+                  </button>
+                </li>
+
+                <li id="useLi" class="showBox li1 active">
+                  <h4>როგორ გამოვიყენოთ სნუპი?</h4>
+                </li>
+
+                <li id="littleDescr" class="showBox li2">
+                  <h4>მოკლედ პრეპარატის შესახებ</h4>
+                </li>
+
+                <li id="conditions" class="showBox li3">
+                  <h4>აფთიაქიდან გაცემის წესი</h4>
+                </li>
+              </ul>
+            </div>
+
+            <div class="description-window">
+              <div class="description-window__background">
+                <div id="snupImage" class="snup-image">
+                  <img src="./assets/Snup-medicine-image.png" alt="" />
+                </div>
+
+                <div class="content">
+                  <div id="conditionsBox" class="myCard content__conditions">
+                    <span class="FullTextSPAN">
+                      <h2>გაცემის პირობები</h2>
+                      <h5>
+                        ფარმაცევტული პროდუქტის ჯგუფი III, გაიცემა რეცეპტის
+                        გარეშე.
+                      </h5>
+                    </span>
+                  </div>
+
+                  <div id="littleDescrBox" class="myCard content__little-descr">
+                    <span class="FullTextSPAN">
+                      <h2>მოკლედ პრეპარატის შესახებ</h2>
+                      <h5>
+                        <strong>პრეპარატის სავაჭრო დასახელება:</strong> სნუპი®.
+                        <strong
+                          >საერთაშორისო არაპატენტირებული ან ჯგუფური
+                          დასახელება:</strong
+                        >
+                        ქსილომეტაზოლინი <strong>წამლის ფორმა:</strong> ნაზალური
+                        დოზირებული სპრეი <br />
+                        <br />
+                        <strong>შემადგენლობა</strong> სპრეის 1 დოზა (90 მკლ)
+                        შეიცავს: ქსილომეტაზოლინის ჰიდროქლორიდი - 45 მკგ ან 90
+                        მკგ; ზღვის წყალი, კალიუმის დიჰიდროფოსფატი, გასუფთავებული
+                        წყალი. <br /><br />
+                        <strong>ფარმაკოლოგიური თვისებები</strong>
+                        ქსილომეტაზოლინი მიეკუთვნება სისხლძარღვთა შემავიწროებელ
+                        ადგილობრივ საშუალებათა ჯგუფს ალფა-ადრენომიმეტური
+                        აქტივობით, იწვევს ცხვირის ლორწოვანი გარსის
+                        სისხლძარღვების შევიწროებას, ხსნის ცხვირის ლორწოვანი
+                        გარსის შეშუპებას და ჰიპერემიას, აღადგენს ცხვირის ღრუს
+                        გამტარობას, აადვილებს ცხვირით სუნთქვას. პრეპარატის
+                        მოქმედება იწყება მისი გამოყენებიდან 5-10 წუთის შემდეგ და
+                        გრძელდება 12 საათამდე. <br /><br />
+                        გამოყენების ჩვენებები მწვავე რესპირატორული დაავადებები
+                        რინიტის (სურდოს) ნიშნებით მწვავე ალერგიული რინიტი
+                        პოლინოზი (სეზონური ალერგია) სინუსიტი, ევსტაქიიტი
+                        (დანამატი ღრუების ანთება) შუა ყურის ანთება
+                        (კომბინირებული თერაპიის შემადგენლობაში ცხვირ-ხახის
+                        ლორწოვანი გარსის შეშუპების შესამცირებლად) პაციენტის
+                        მომზადება ცხვირის ნესტოებში დიაგნოსტიკური
+                        მანიპულაციებისთვის. <br /><br />
+                        გამოყენება ორსულობის დროს და ლაქტაციის პერიოდში
+                        ორსულობის პერიოდში პრეპარატის გამოყენება უკუნაჩვენებია.
+                        ლაქტაციის პერიოდში პრეპარატი გამოიყენება მხოლოდ
+                        დედისთვის და ბავშვისთვის მოსალოდნელი სარგებლისა და
+                        რისკის თანაფარდობის შეფასების შემდეგ, არ არის დაშვებული
+                        რეკომენდებული დოზის გადაჭარბება. ლაქტაციის პერიოდში
+                        პრეპარატ სნუპის® გამოყენების წინ საჭიროა ექიმთან
+                        კონსულტაცია. <br /><br />
+                        განსაკუთრებული მითითებები პრეპარატის შემადგენლობაში
+                        შემავალი ზღვის წყალი ხელს უწყობს ცხვირის ღრუს ლორწოვანი
+                        გარსის ნორმალური ფიზიოლოგიური მდგომარეობის შენარჩუნებას,
+                        მოციმციმე ეპითელიუმის ფუნქციის და ლორწოვანი გარსის
+                        ცილინდრულ უჯრედებში ლორწოს გამომუშავების ნორმალიზების
+                        გაუმჯობესების უნარის შედეგად. არ არის რეკომენდებული 7
+                        დღეზე მეტი პერიოდის განმავლობაში უწყვეტად გამოყენება. არ
+                        უნდა მოხდეს რეკომენდებული დოზის გადაჭარბება,
+                        განსაკუთრებით ბავშვებსა და ხანდაზმულებში. <br /><br />
+                        ზეგავლენა ავტოსატრანსპორტო საშუალებების, მექანიზმების
+                        მართვის უნარზე დოზირების რეჟიმის დაცვის შემთხვევაში
+                        ქსილომეტაზოლინი არ მოქმედებს ყურადღების კონცენტრაციაზე
+                        და ფსიქომოტორული რეაქციების სისწრაფეზე. <br /><br />
+                        შენახვის პირობები არაუმეტეს 250C ტემპერატურაზე. ფლაკონის
+                        გახსნის შემდეგ პრეპარატის გამოყენება უნდა მოხდეს 12 თვის
+                        განმავლობაში. შეინახეთ ბავშვებისათვის მიუწვდომელ
+                        ადგილას. <br /><br />
+                        ვარგისობის ვადა 5 წელი. <br /><br />
+                        მწარმოებელი ურსაფარმ არცნაიმიტელ გმბჰ, გერმანია
+                        ინდუსტრიეშტრასე, 35 66129 საარბრუკენი ან ფამარ ხელფ ქეირ
+                        სერვისეზ მადრიდ ს.ა.უ., ესპანეთი ლეგანესის გამზ., 62, ქ.
+                        ალკორკონი, 28923 (პროვინცია მადრიდი) ან ჰემომონტ დ.ო.ო.,
+                        ჩერნოგორია 81000, ქ. პოდგორიცა, ილიე პლამენცის ქ. ბბ мм
+                      </h5>
+                    </span>
+                  </div>
+
+                  <div id="useLiBox" class="myCard content__Terms-of-Use show">
+                    <span class="FullTextSPAN">
+                      <h2>როგორ გამოვიყენოთ სნუპი?</h2>
+                      <h5 class="h5">სნუპი - ცხვირის დოზირებული სპრეი</h5>
+                      <h2>სნუპი® ნაზალური დოზირებული სპრეი 45 მკგ/დოზა</h2>
+                      <h5>
+                        2-დან 6 წლამდე ასაკის ბავშვებში 1 შესხურება თითოეულ
+                        ნესტოში დღეში 1-3-ჯერ. მოზრდილებში და 6 წელზე უფროსი
+                        ასაკის ბავშვებში 1-2 შესხურება თითოეულ ნესტოში დღეში
+                        2-3-ჯერ. გამოყენების მაქსიმალური დღიური დოზირება: 3 ჯერ
+                        დღეში.
+                      </h5>
+                      <br /><br />
+                      <h2>
+                        <strong>სნუპი® ნაზალური დოზირებული სპრეი </strong> 90
+                        მკგ/დოზა
+                      </h2>
+                      <h5>
+                        მოზრდილებში და 6 წელზე უფროსი ასაკის ბავშვებში 1
+                        შესხურება თითოეულ ნესტოში დღეში 2-3-ჯერ. დღეში 3-ჯერზე
+                        მეტად გამოყენება არ არის რეკომენდებული. ბავშვებში
+                        პრეპარატის გამოყენება უნდა მოხდეს მოზრდილების
+                        მეთვალყურეობის ქვეშ. ბოლო შესხურების ჩატარება
+                        რეკომენდებულია უშუალოდ ძილის წინ. გამოყენებამდე ნესტოები
+                        უნდა გამოსუფთავდეს.
+                      </h5>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+        <div class="background"></div>
+      </section>
+
+      <section id="useSnup" class="section-3">
+        <main class="S3-container">
+          <div class="S3-container__image-box">
+            <img src="./assets/snup-section-3.png" alt="" />
+          </div>
+          <div class="S3-container__description-box">
+            <h1 class="h1">სნუპი®</h1>
+            <h2 class="h2">ორმაგი მოქმედება სურდოს წინააღმდეგ!</h2>
+            <button id="openButton3" class="buyButton" type="button" title="">
+              <h3 class="h3">ყიდვა</h3>
+            </button>
+          </div>
+          <div class="S3-container__footer-box">
+            <p>
+              გამოყენებისას გაეცანით ინსტრუქციას. გვერდითი მოვლენების შესახებ
+              დეტალური ინფორმაციის მისაღებად მიმართეთ ექიმს.
+            </p>
+          </div>
+        </main>
+      </section>
+
+      <section class="section-4">
+        <main class="main">
+          <div class="main__menu">
+            <h4 class="h4">მენიუ</h4>
+            <h6 class="h6">სნუპი</h6>
+            <h6 class="h6">მედიკამენტის შესახებ</h6>
+            <h6 class="h6">ყიდვა</h6>
+          </div>
+
+          <div class="main__instruction">
+            <h4 class="h4">ინსტრუქცია</h4>
+            <div>
+              <a
+                title="download PDF File"
+                href="./pdf/downloadPDF.pdf"
+                download="SNUP_PDF_FILE"
+              >
+                <img src="./assets/downloadArrow.png" alt="" />
+              </a>
+              <h6 class="h6">სნუპი</h6>
+            </div>
+          </div>
+
+          <div class="main__contacts">
+            <h4 class="h4">კონტაქტი</h4>
+            <h6 class="h6">
+              პრეპარატის უსაფრთხოებისა და ხარისხის კონტროლის მიზნით, ნებისმიერი
+              ინფორმაცია არასასურველი რეაქციების შესახებ და პრეტენზიები
+              პროდუქტის ხარისხის შესახებ აუცილებელია შეატყობინოთ ელ/ფოსტაზე:
+            </h6>
+            <span>
+              <img src="./assets/GMAIL.png" alt="" />
+              <h6 class="h6">lasha.elisashvili@stada.ge</h6>
+            </span>
+          </div>
+        </main>
+      </section>
+      <footer>
+        <main>
+          <p class="p">გამოყენების წესები და კონფიდენციალურობის პოლიტიკა</p>
+          <p class="p">© Copyright STADA 2022</p>
+        </main>
+      </footer>
+
+      <div id="modalBuyBoxOpen" class="modalBuyBox">
+        <div class="modalBuyBox__content">
+          <div class="modalBuyBox__content__descr">
+            <h1 class="h1">აფთიაქები</h1>
+            <h5 class="h5">პროდუქტის შეძენა შეგიძლიათ ერთ-ერთ აფთიაქში</h5>
+          </div>
+
+          <div class="modalBuyBox__content__aversi">
+            <div><img src="./assets/aversi.png" alt="" /></div>
+            <div class="buyModalVisible">
+              <button type="button" title="buy now">ყიდვა</button>
+            </div>
+          </div>
+
+          <div class="modalBuyBox__content__PSP">
+            <div><img src="./assets/PSP.png" alt="" /></div>
+            <div class="buyModalVisible">
+              <button type="button" title="buy now">ყიდვა</button>
+            </div>
+          </div>
+
+          <span id="closeBuyModal"><i class="fa-solid fa-x"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

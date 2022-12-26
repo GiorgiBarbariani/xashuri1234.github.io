@@ -1,0 +1,147 @@
+@use "config" as *;
+
+.section-3 {
+  padding-top: 75px;
+
+  .S3-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      ". . . B1 B1 B1 B2 B2 B2 . . ."
+      ". . . B1 B1 B1 B2 B2 B2 . . ."
+      "B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3";
+
+    &__image-box {
+      grid-area: B1;
+      position: relative;
+
+      & > img {
+        position: absolute;
+        top: 20px;
+      }
+    }
+
+    &__description-box {
+      grid-area: B2;
+
+      .h1 {
+        margin-bottom: 27px;
+      }
+
+      .h2 {
+        margin-bottom: 35px;
+      }
+
+      .buyButton {
+        @include snupSectionButton;
+        margin-bottom: 75px;
+      }
+    }
+
+    &__footer-box {
+      grid-area: B3;
+      height: 249px;
+      background: #ffffff;
+      box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.07);
+      border-radius: 0px 0px 10px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      & > p {
+        max-width: 855px;
+      }
+    }
+  }
+}
+
+//RESPONSIVE
+
+@include media-ipad {
+  .section-3 {
+    padding-top: 65px;
+
+    .S3-container {
+      grid-template-areas:
+        "B1 B1 B1 B1 B1 B1 B2 B2 B2 B2 B2 B2"
+        "B1 B1 B1 B1 B1 B1 B2 B2 B2 B2 B2 B2"
+        "B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3" !important;
+
+      &__image-box {
+        grid-area: B1;
+        position: relative;
+        padding-left: 15px;
+
+        & > img {
+          position: absolute;
+          top: 30px !important;
+          z-index: 55;
+        }
+      }
+
+      &__description-box {
+        .h1 {
+          margin-top: 10px;
+        }
+      }
+
+      &__footer-box {
+        & > p {
+          max-width: 90%;
+        }
+      }
+    }
+  }
+}
+
+@include media-mobile {
+  .section-3 {
+    padding-top: 80px;
+
+    .S3-container {
+      grid-template-rows: auto 350px 291px;
+      grid-template-areas:
+        "B2 B2 B2 B2 B2 B2 B2 B2 B2 B2 B2 B2"
+        "B1 B1 B1 B1 B1 B1 B1 B1 B1 B1 B1 B1"
+        "B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3" !important;
+
+      &__image-box {
+        grid-area: B1;
+        position: relative;
+        padding-left: 35px;
+        z-index: 55;
+
+        & > img {
+          position: absolute;
+          top: 50px !important;
+          z-index: 55;
+        }
+      }
+
+      &__description-box {
+        padding-left: 35px;
+
+        .h1 {
+          margin-top: 10px;
+          margin-bottom: 20px;
+        }
+
+        .h2 {
+          min-width: 280px;
+        }
+
+        .buyButton {
+          margin-bottom: 55px;
+        }
+      }
+
+      &__footer-box {
+        & > p {
+          max-width: 76%;
+        }
+      }
+    }
+  }
+}

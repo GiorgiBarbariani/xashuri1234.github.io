@@ -1,0 +1,151 @@
+@use "config" as *;
+
+.modalBuyBox {
+  opacity: 0;
+  pointer-events: none;
+  transition: $myTransition;
+  display: none;
+}
+
+.modalBuyBox.showBuyBox {
+  transition: $myTransition;
+  background: linear-gradient(
+    120.57deg,
+    rgba(152, 3, 77, 0.98) -22.36%,
+    rgba(0, 78, 103, 0.98) 45.27%,
+    rgba(12, 73, 92, 0.98) 118.69%
+  );
+  border-radius: 10px;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modalBuyBox__content {
+    transition: $myTransition;
+    max-width: 749px;
+    width: 80%;
+    height: auto;
+    padding-bottom: 75px;
+    background: #ffffff;
+    box-shadow: 0px 20px 40px rgba(22, 36, 40, 0.3);
+    border-radius: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 175px auto;
+    grid-template-areas:
+      "De De De De De De De De De De De De"
+      "AV AV AV AV AV AV PS PS PS PS PS PS"
+      "AV AV AV AV AV AV PS PS PS PS PS PS";
+
+    &__descr {
+      grid-area: De;
+      margin-bottom: 60px;
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      & > .h1 {
+        margin-bottom: 18px;
+      }
+    }
+
+    &__aversi {
+      grid-area: AV;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+
+      & > div:first-child {
+        margin-bottom: 53px;
+      }
+
+      & > .buyModalVisible {
+        button {
+          @include modalPopupButton;
+        }
+      }
+    }
+
+    &__PSP {
+      grid-area: PS;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+
+      & > div:first-child {
+        margin-bottom: 20px;
+      }
+
+      & > .buyModalVisible {
+        button {
+          @include modalPopupButton;
+        }
+      }
+    }
+
+    & > span {
+      position: absolute;
+      top: -30px;
+      right: -20px;
+      cursor: pointer;
+
+      & > i {
+        color: #ffffff;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@include media-mobile {
+  .modalBuyBox.showBuyBox {
+    padding-top: 100px;
+
+    .modalBuyBox__content {
+      grid-template-rows: auto auto auto !important;
+      height: auto;
+
+      grid-template-areas:
+        "De De De De De De De De De De De De"
+        "AV AV AV AV AV AV AV AV AV AV AV AV"
+        "PS PS PS PS PS PS PS PS PS PS PS PS" !important;
+
+      &__descr {
+        grid-area: De;
+        margin-bottom: 30px !important;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 25px;
+        align-items: center;
+
+        & > .h1 {
+          margin-bottom: 10px;
+        }
+        & > .h5 {
+          width: 70%;
+        }
+      }
+
+      &__aversi {
+        margin-bottom: 30px;
+
+        & > div:first-child {
+          margin-bottom: 20px !important;
+        }
+      }
+    }
+  }
+}
